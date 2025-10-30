@@ -1,23 +1,39 @@
-# Codex Repository
+# AI Movie Explorer
 
-A small workspace for experiments and sample code.
+AI Movie Explorer is a lightweight React experience built with Vite and Tailwind CSS that lets you search the The Movie Database (TMDb) catalog, preview results, and store favorites locally in your browser.
 
-## Contents
-- Short scripts and examples
-- Notes and prototypes
+## Getting Started
 
-## Requirements
-- Git
-- Your preferred language runtimes (e.g., Node.js, Python) as required by individual subfolders
+1. Install dependencies:
 
-## Usage
-1. Clone the repo:
-    git clone /path/to/repo
-2. Open the relevant folder and follow instructions in subfolder READMEs or run the example script.
+   ```bash
+   npm install
+   ```
 
-## Contributing
-- Create an issue or submit a pull request.
-- Keep changes focused and documented.
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open the printed URL (typically http://localhost:5173) in your browser.
+
+## Environment Variables
+
+Create a `.env` file in the project root and provide your TMDb API key:
+
+```bash
+VITE_TMDB_API_KEY=YOUR_API_KEY
+```
+
+## Key Features
+
+- Instant search results from TMDb with debounced requests.
+- Responsive movie/TV cards with posters, release year, and star ratings.
+- Favorite toggles stored in `localStorage` with quick filtering.
+- Light/dark theme switcher that persists preferences.
+- Optional TV/movie mode switch, plus loading feedback during fetches.
 
 ## License
+
 Specify a license in a LICENSE file (e.g., MIT).
