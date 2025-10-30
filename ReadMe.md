@@ -1,39 +1,44 @@
 # AI Movie Explorer
 
-AI Movie Explorer is a lightweight React experience built with Vite and Tailwind CSS that lets you search the The Movie Database (TMDb) catalog, preview results, and store favorites locally in your browser.
+AI Movie Explorer is a lightweight React experience built with Vite and Tailwind CSS. It lets you quickly look up movies and TV shows from The Movie Database (TMDb), preview key details, and bookmark your favorites so you can revisit them later.
 
-## Getting Started
+## Prerequisites
 
-1. Install dependencies:
+- Node.js 18 or later
+- npm (comes bundled with Node.js)
+- A TMDb API key
 
+## Setup and Local Development
+
+1. Install the project dependencies:
    ```bash
    npm install
    ```
-
 2. Start the development server:
-
    ```bash
    npm run dev
    ```
+3. Open the printed URL (typically http://localhost:5173) in your browser to explore the app.
 
-3. Open the printed URL (typically http://localhost:5173) in your browser.
+### Stopping the Development Server
+
+When you are done, return to the terminal that is running `npm run dev` and press `Ctrl+C`. This stops the Vite development server and frees the port.
 
 ## Environment Variables
 
-Create a `.env` file in the project root and provide your TMDb API key:
-
+Create a `.env` file in the project root and set your TMDb API key:
 ```bash
 VITE_TMDB_API_KEY=YOUR_API_KEY
 ```
 
-## Key Features
+## Highlights
 
-- Instant search results from TMDb with debounced requests.
-- Responsive movie/TV cards with posters, release year, and star ratings.
-- Favorite toggles stored in `localStorage` with quick filtering.
-- Light/dark theme switcher that persists preferences.
-- Optional TV/movie mode switch, plus loading feedback during fetches.
+- ⚡ **Instant search** with debounced requests to TMDb.
+- 🎬 **Rich media cards** that showcase posters, release year, star ratings, and overviews.
+- ⭐ **Favorites management** with quick filtering, all persisted in `localStorage`.
+- 🌗 **Light/dark theme toggle** that remembers your preference.
+- 📺 **Movie or TV mode switch**, plus loading states while data is retrieved.
 
 ## License
 
-Specify a license in a LICENSE file (e.g., MIT).
+Add a LICENSE file (for example, MIT) to document your preferred terms.
