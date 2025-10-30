@@ -1,44 +1,53 @@
-# AI Movie Explorer
+# AI Chat Next.js App
 
-AI Movie Explorer is a lightweight React experience built with Vite and Tailwind CSS. It lets you quickly look up movies and TV shows from The Movie Database (TMDb), preview key details, and bookmark your favorites so you can revisit them later.
+A responsive, accessible chat interface for talking with OpenAI models using streaming responses.
 
-## Prerequisites
+## Features
+- Next.js App Router with TypeScript
+- Streaming chat with the OpenAI API (Responses API preferred, Chat Completions fallback)
+- Markdown rendering with syntax-highlighted code blocks and copy buttons
+- Model selector, system prompt, temperature and max token controls
+- Dark mode toggle with persistence
+- Local chat history with clear/reset and JSON export
 
-- Node.js 18 or later
-- npm (comes bundled with Node.js)
-- A TMDb API key
+## Getting started
 
-## Setup and Local Development
-
-1. Install the project dependencies:
+1. **Clone and install dependencies**
    ```bash
+   git clone <repo-url>
+   cd Codex_helper_example
    npm install
    ```
-2. Start the development server:
+
+2. **Configure environment variables**
+   - Copy `.env.example` to `.env.local` and provide your OpenAI API key:
+     ```bash
+     cp .env.example .env.local
+     ```
+   - Edit `.env.local` and replace `sk-...` with your real key.
+
+3. **Run the development server**
    ```bash
    npm run dev
    ```
-3. Open the printed URL (typically http://localhost:5173) in your browser to explore the app.
+   Visit [http://localhost:3000](http://localhost:3000) to use the app. Streaming responses require a valid API key and a model that supports streaming.
 
-### Stopping the Development Server
+4. **Building for production**
+   ```bash
+   npm run build
+   npm run start
+   ```
 
-When you are done, return to the terminal that is running `npm run dev` and press `Ctrl+C`. This stops the Vite development server and frees the port.
+## Usage notes
+- The chat stores conversations locally in your browser (`localStorage`). Use **Clear chat** to reset or **Export** to download the current session as JSON.
+- The optional system prompt is applied to the first message for each session.
+- Temperature and max token preferences are remembered per browser.
+- API errors (including invalid keys and rate limits) display actionable messages in the UI.
 
-## Environment Variables
+## Deployment
+- Deploy easily to [Vercel](https://vercel.com/) or any platform that supports Next.js 14+ and Node.js 18+.
+- Set the `OPENAI_API_KEY` environment variable in your hosting provider's dashboard.
 
-Create a `.env` file in the project root and set your TMDb API key:
-```bash
-VITE_TMDB_API_KEY=YOUR_API_KEY
-```
-
-## Highlights
-
-- ⚡ **Instant search** with debounced requests to TMDb.
-- 🎬 **Rich media cards** that showcase posters, release year, star ratings, and overviews.
-- ⭐ **Favorites management** with quick filtering, all persisted in `localStorage`.
-- 🌗 **Light/dark theme toggle** that remembers your preference.
-- 📺 **Movie or TV mode switch**, plus loading states while data is retrieved.
-
-## License
-
-Add a LICENSE file (for example, MIT) to document your preferred terms.
+## Safety
+- The app forwards user input directly to OpenAI. Remind users not to share sensitive data.
+- Consider implementing additional safeguards (moderation, logging, user controls) before public release.
